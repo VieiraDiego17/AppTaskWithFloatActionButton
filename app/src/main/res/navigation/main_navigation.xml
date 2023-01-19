@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.apptarefas.view.menu.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/actionMenuToRegister"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/actionMenuToList"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="task"
+            app:argType="com.example.apptarefas.model.Task"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.apptarefas.view.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/actionRegisterToMenu"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/actionRegisterToList"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.apptarefas.view.list.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <argument
+            android:name="task"
+            app:argType="com.example.apptarefas.model.Task"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/actionListToDetails"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/actionListToMenu"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/actionListToRegister"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.apptarefas.view.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="task"
+            app:argType="com.example.apptarefas.model.Task" />
+        <action
+            android:id="@+id/actionDetailsToList"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/actionDetailsToMenu"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.apptarefas.view.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/actionLoginToRegisterLogin"
+            app:destination="@id/registerLoginFragment" />
+        <action
+            android:id="@+id/actionLoginToHome"
+            app:destination="@id/menuFragment" />
+        <argument
+            android:name="login"
+            app:argType="com.example.apptarefas.model.Login"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerLoginFragment"
+        android:name="com.example.apptarefas.view.register.RegisterLoginFragment"
+        android:label="fragment_register_login"
+        tools:layout="@layout/fragment_register_login" >
+        <action
+            android:id="@+id/actionRegisterLoginToLogin"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>

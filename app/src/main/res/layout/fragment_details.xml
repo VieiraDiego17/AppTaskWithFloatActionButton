@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="739dp"
+        tools:context=".view.FragmentRegistrer">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="750sp"
+            android:background="#90000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/inputs"
+            android:text="DETALHES DE MANUTENÇÃO"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/titleDetails"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/inputs"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/imageEdit1"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <EditText
+            android:id="@+id/descriptionDetails"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/inputs"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/imageEdit2"
+            app:layout_constraintStart_toStartOf="@+id/titleDetails"
+            app:layout_constraintTop_toBottomOf="@+id/titleDetails" />
+
+        <EditText
+            android:id="@+id/utensilsDetails"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/inputs"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/imageEdit3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/descriptionDetails"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionDetails" />
+
+        <Button
+            android:id="@+id/buttonSaveEdit"
+            style="@style/botao_azul"
+            android:layout_width="169dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/cantos"
+            android:text="SALVAR ALTERAÇÃO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/utensilsDetails" />
+
+        <Button
+            android:id="@+id/buttonDetailsToList"
+            style="@style/botao_azul"
+            android:layout_width="169dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/cantos"
+            android:text="IR PARA LISTA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSaveEdit" />
+
+        <Button
+            android:id="@+id/buttonDetailsToMenu"
+            style="@style/botao_azul"
+            android:layout_width="169dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/cantos"
+            android:text="IR PARA INICIO"
+            app:layout_constraintEnd_toEndOf="@+id/buttonDetailsToList"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/buttonDetailsToList"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDetailsToList" />
+
+        <ImageView
+            android:id="@+id/imageEdit1"
+            android:layout_width="57dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:srcCompat="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/imageEdit2"
+            android:layout_width="57dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleDetails"
+            app:srcCompat="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/imageEdit3"
+            android:layout_width="57dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionDetails"
+            app:srcCompat="@drawable/edit" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="canto">
+        <item name="backgroundTint">@color/botao</item>
+    </style>
+
+    <style name="botao_escuro">
+        <item name="backgroundTint">#424040</item>
+    </style>
+
+    <style name="botao_cadastro">
+        <item name="backgroundTint">@color/black</item>
+    </style>
+
+    <style name="botao_azul">
+        <item name="backgroundTint">#2196F3</item>
+    </style>
+
+    <style name="textColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="progress">
+        <item name="color">#4E4B4B</item>
+    </style>
+
+
+
+    <!--    <style name="moldura">-->
+    <!--        <item name="android:background">@drawable/moldura</item>-->
+    <!--    </style>-->
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.menu.MenuFragment">
+
+    <View
+        android:id="@+id/viewFundo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#90000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonMenuToRegister"
+        style="@style/botao_azul"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/cantos"
+        android:text="CADASTRAR MANUTENÇÃO"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/buttonMenuToList"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/cantos"
+        style="@style/botao_azul"
+        android:text="VER MANUTENÇÕES CADASTRADAS"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMenuToRegister"
+        app:layout_constraintStart_toStartOf="@+id/buttonMenuToRegister"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMenuToRegister" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="277dp"
+        android:layout_height="262dp"
+        android:layout_marginTop="52dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viewFundo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

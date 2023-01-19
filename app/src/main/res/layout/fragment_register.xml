@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="739dp"
+        tools:context=".view.FragmentRegistrer">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="1000sp"
+            android:background="#90000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/inputs"
+            android:text="CADASTRO DE MANUTENÇÃO"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/inputs"
+            android:hint="Digite o tiulo da manutenção"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/title"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <EditText
+            android:id="@+id/textDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/inputs"
+            android:ems="10"
+            android:hint="Digite a descrição da manutenção"
+            android:inputType="textMultiLine"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textTitle"
+            app:layout_constraintHorizontal_bias="0.477"
+            app:layout_constraintStart_toStartOf="@+id/textTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+        <EditText
+            android:id="@+id/textUtelsils"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/inputs"
+            android:ems="10"
+            android:hint="Digite o que vai usar para realizar a manutenção"
+            android:inputType="textMultiLine"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textDescription"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textDescription"
+            app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+
+        <Button
+            android:id="@+id/buttonRegisterToList"
+            style="@style/botao_azul"
+            android:layout_width="169dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/cantos"
+            android:text="CADASTRAR MANUTENÇÃO"
+            app:layout_constraintEnd_toEndOf="@+id/textUtelsils"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="@+id/textUtelsils"
+            app:layout_constraintTop_toBottomOf="@+id/textUtelsils" />
+
+        <Button
+            android:id="@+id/buttonRegisterToMenu"
+            style="@style/botao_azul"
+            android:layout_width="169dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/cantos"
+            android:text="IR PRA TELA HOME"
+            app:layout_constraintEnd_toEndOf="@+id/buttonRegisterToList"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/buttonRegisterToList"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterToList" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
