@@ -36,42 +36,28 @@
                 android:id="@+id/textTypeTask"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="4dp"
                 android:text="TextView"
                 android:textAlignment="center"
-                app:layout_constraintEnd_toStartOf="@+id/deleteImageView"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/imageFerramenta"
+                app:layout_constraintEnd_toEndOf="@+id/textTypeDate"
+                app:layout_constraintStart_toStartOf="@+id/textTypeDate"
                 app:layout_constraintTop_toBottomOf="@+id/textTypeDate" />
 
             <TextView
                 android:id="@+id/textTypeDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:maxLines="1"
                 android:text="TextView"
                 android:textAlignment="center"
-                app:layout_constraintEnd_toStartOf="@+id/deleteImageView"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageFerramenta"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                    android:id="@+id/deleteImageView"
-                    android:layout_width="80dp"
-                    android:layout_height="81dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/delete"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

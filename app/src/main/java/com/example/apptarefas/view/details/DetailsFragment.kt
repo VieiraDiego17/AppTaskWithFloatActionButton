@@ -7,25 +7,19 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.apptarefas.R
+import com.example.apptarefas.banco.Banco
+import com.example.apptarefas.model.Task
 import com.example.apptarefas.resources.ListTaskAdapter
-import com.example.apptarefas.viewModel.DetailsViewModel
 import kotlinx.android.synthetic.main.fragment_details.*
 
 class DetailsFragment : Fragment(R.layout.fragment_details) {
 
     private val args: DetailsFragmentArgs by navArgs()
     private lateinit var listAdapter: ListTaskAdapter
-    private lateinit var viewModel: DetailsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = ViewModelProvider(
-            this,
-            DetailsViewModel.DetailsViewModelProvider(
-                this
-            )
-        )[DetailsViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,24 +28,10 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         receivedList()
         setClicked()
         clickEditOff()
-        //saveChange()
 
         titleDetails.isEnabled = false
         descriptionDetails.isEnabled = false
         utensilsDetails.isEnabled = false
-    }
-
-    fun saveChange(){
-
-        buttonSaveEdit.setOnClickListener {
-        listAdapter = ListTaskAdapter {
-                var action = DetailsFragmentDirections.actionDetailsToList(
-                    it
-                )
-                findNavController().navigate(action)
-            }
-            findNavController().navigate(R.id.actionDetailsToList)
-        }
     }
 
     fun receivedList() {
@@ -81,6 +61,20 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
         buttonDetailsToMenu.setOnClickListener {
             findNavController().navigate(R.id.actionDetailsToMenu)
+        }
+
+        buttonDelete.setOnClickListener {
+            Banco.deleteTask(args.task)
+            findNavController().navigate(R.id.actionDetailsToList)
+        }
+
+        buttonSaveEdit.setOnClickListener {
+            Banco.alterTask(args.task, Task(
+                title = titleDetails.text.toString(),
+                description = descriptionDetails.text.toString(),
+                utensils = utensilsDetails.text.toString()
+            ))
+            findNavController().navigate(R.id.actionDetailsToList)
         }
     }
 

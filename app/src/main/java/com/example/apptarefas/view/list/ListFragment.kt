@@ -1,16 +1,24 @@
 package com.example.apptarefas.view.list
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.apptarefas.R
+import com.example.apptarefas.banco.Banco
+import com.example.apptarefas.model.Task
 import com.example.apptarefas.resources.DataSourceList
 import com.example.apptarefas.resources.ListTaskAdapter
 import com.example.apptarefas.viewModel.ListViewModel
+import kotlinx.android.synthetic.main.container.*
+import kotlinx.android.synthetic.main.fragment_details.*
 import kotlinx.android.synthetic.main.fragment_list.*
 
 class ListFragment : Fragment(R.layout.fragment_list) {
@@ -18,6 +26,7 @@ class ListFragment : Fragment(R.layout.fragment_list) {
     private val args: ListFragmentArgs by navArgs()
     private lateinit var listAdapter: ListTaskAdapter
     private lateinit var viewModel: ListViewModel
+    private lateinit var adapter: ListTaskAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,32 +40,18 @@ class ListFragment : Fragment(R.layout.fragment_list) {
 
         viewModel.loadUsers(requireActivity())
 
-        // TODO: tentativas de deletar e editar o item da lista
-        /*
-
-        viewModel.deleteUser(task = task, context = requireActivity())
-
-        listAdapter = ListTaskAdapter { task ->
-            viewModel.deleteUser(task = task, context = requireActivity())
-        }
-
-        listAdapter = ListTaskAdapter { task ->
-            viewModel.editUser(task = task, context = requireActivity())
-        }
-        */
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setClicked()
         setRecyclerView()
-        //deleteTask()
     }
 
     fun setRecyclerView() {
 
         viewModel.tasks.observe(viewLifecycleOwner) { tasks ->
-            listAdapter.setDataSet(tasks)
+            listAdapter.setDataSet(tasks as MutableList<Task>)
         }
 
         listAdapter = ListTaskAdapter {
@@ -66,48 +61,18 @@ class ListFragment : Fragment(R.layout.fragment_list) {
             findNavController().navigate(action)
         }
 
-        // TODO: tentativas de deletar e editar o item da lista
-        /*
-        deleteImageView.setOnClickListener {
-            viewModel.deleteUser(task = it, context = requireActivity())
-        }
-
-        listAdapter = ListTaskAdapter { task ->
-            deleteImageView.setOnClickListener {
-                viewModel.deleteUser(task = task, context = requireActivity())
-            }
-        }
-        */
 
         args.task?.let {
             DataSourceList.castToList(it)
         }?.let {
-            listAdapter.setDataSet(it)
+            listAdapter.setDataSet(it as MutableList<Task>)
         }
-
-        // TODO: Preenchimento da lista após editada
-        /*
-        args.taskEdit?.let {
-            DataSourceList.castToList(it)
-        }?.let {
-            listAdapter.setDataSet(it)
-        }
-         */
 
         recyclerView.apply {
             adapter = listAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
     }
-
-    // TODO: tentativas de deletar
-//    fun deleteTask(){
-//            listAdapter = ListTaskAdapter { task ->
-//                deleteImageView.setOnClickListener {
-//                    viewModel.deleteUser(task = task, context = requireActivity())
-//                }
-//            }
-//    }
 
     fun setClicked() {
         buttonListToRegister.setOnClickListener {
@@ -117,5 +82,5 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         buttonListToMenu.setOnClickListener {
             findNavController().navigate(R.id.actionListToMenu)
         }
+        }
     }
-}

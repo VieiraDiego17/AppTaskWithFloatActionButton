@@ -30,14 +30,13 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/inputs"
             android:text="DETALHES DE MANUTENÇÃO"
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,6 +98,18 @@
             app:layout_constraintTop_toBottomOf="@+id/utensilsDetails" />
 
         <Button
+            android:id="@+id/buttonDelete"
+            style="@style/botao_azul"
+            android:layout_width="169dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/cantos"
+            android:text="DELETAR TASK"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSaveEdit" />
+
+        <Button
             android:id="@+id/buttonDetailsToList"
             style="@style/botao_azul"
             android:layout_width="169dp"
@@ -108,7 +119,7 @@
             android:text="IR PARA LISTA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSaveEdit" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonDelete" />
 
         <Button
             android:id="@+id/buttonDetailsToMenu"

@@ -7,11 +7,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apptarefas.R
 import com.example.apptarefas.model.Task
+import com.example.apptarefas.viewModel.ListViewModel
 import kotlinx.android.synthetic.main.container.view.*
+import java.util.*
 
 class ListTaskAdapter(private var onClick: (Task) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private lateinit var items: List<Task>
+    private lateinit var list: MutableList<Task>
+    private lateinit var viewModel: ListViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ListTaskViewHolder(
@@ -22,18 +25,23 @@ class ListTaskAdapter(private var onClick: (Task) -> Unit) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
             is ListTaskViewHolder -> {
-                holder.bind(items[position],onClick)
+                holder.bind(list[position],onClick)
             }
         }
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return list.size
     }
 
-    fun setDataSet(list: List<Task>){
-        this.items = list
+    fun setDataSet(list: MutableList<Task>){
+        this.list = list
         notifyDataSetChanged()
+    }
+
+    fun removeAt(position: Int) {
+        list.removeAt(position)
+        notifyItemRemoved(position)
     }
 
     class ListTaskViewHolder constructor(
@@ -45,34 +53,26 @@ class ListTaskAdapter(private var onClick: (Task) -> Unit) : RecyclerView.Adapte
         // LINHA COMENTADA POIS O ITEM NÃO DEVE APARECER NO CARD,
         // SOMENTE NA TELA DE DETAILS
 
-        fun bind(taskAdd: Task?,onClick: (Task) -> Unit){
-            titleTask.text = taskAdd?.title
-            descriptionTask.text = taskAdd?.description
+        fun bind(task: Task,onClick: (Task) -> Unit){
+            titleTask.text = task.title
+            descriptionTask.text = task.description
             //utensilsTask.text = task.utensils
             // LINHA COMENTADA POIS O ITEM NÃO DEVE APARECER NO CARD,
             // SOMENTE NA TELA DE DETAILS
 
 
             //AQUI O CLICK FUNCIONA SOMENTE NA IMAGEM DA FERRAMENTA NO CARD
-            itemView.imageFerramenta.setOnClickListener {
-                if (taskAdd != null) {
-                    onClick(taskAdd)
-                }
-            }
-
-            //AQUI O CLICK FUNCIONA NO CARD INTEIRO
-//            itemView.setOnClickListener {
-//                onClick(task)
+//            itemView.imageFerramenta.setOnClickListener {
+//                if (taskAdd != null) {
+//                    onClick(taskAdd)
+//                }
 //            }
 
-            // TODO: Tentativa para deletar item da lista
-            /*
-            itemView.deleteImageView.setOnClickListener {
-                if (taskDelete != null) {
-                    onClick(taskDelete)
-                }
+            //AQUI O CLICK FUNCIONA NO CARD INTEIRO
+            itemView.setOnClickListener {
+                onClick(task)
             }
-             */
+
         }
     }
 }
