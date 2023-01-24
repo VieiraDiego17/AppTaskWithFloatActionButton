@@ -1,30 +1,30 @@
 package com.example.apptarefas.view.register
 
-import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.provider.Settings
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.apptarefas.R
 import com.example.apptarefas.model.Task
+import com.example.apptarefas.resources.ImageContract
 import com.example.apptarefas.viewModel.RegisterViewModel
 import kotlinx.android.synthetic.main.fragment_register.*
-import java.util.jar.Manifest
+import kotlinx.android.synthetic.main.fragment_register.view.*
+
 
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
     private lateinit var viewModel: RegisterViewModel
-    private lateinit var dialog: AlertDialog
+    private var imageCar: Uri? = null
 
-    companion object{
-        private val PERMISSAO_GALERIA = android.Manifest.permission.READ_EXTERNAL_STORAGE
+    private val getImage = registerForActivityResult(
+        ImageContract()
+    ){
+        setImage(it)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +36,6 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 this))[RegisterViewModel::class.java]
 
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -46,6 +45,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
 
     private fun setClick(){
         createTask()
+        callImage()
     }
 
     private fun createTask() {
@@ -64,6 +64,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                     title = textTitle.text.toString(),
                     description = textDescription.text.toString(),
                     utensils = textUtelsils.text.toString(),
+                    imageCar,
                     context = requireActivity()
                 )
 
@@ -72,7 +73,8 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                         Task(
                             textTitle.text.toString(),
                             textDescription.text.toString(),
-                            textUtelsils.text.toString()
+                            textUtelsils.text.toString(),
+                            imageCar
                         )
                     )
                     findNavController().navigate(action)
@@ -81,6 +83,42 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
         }
     }
 
+    private fun callImage(){
+        buttonSelectImage.setOnClickListener {
+            getImage.launch(100)
+        }
+    }
+
+    private fun setImage(it: Uri?) {
+        imageCar = it
+        imageGalery.setImageURI(it)
+    }
+
+
+//    Criar variáveis da imagem
+//    private var fotoReceita: Uri? = null
+//    private val getImage = registerForActivityResult(
+//        EscolherFotoGaleriaContract()
+//    ){
+//        setImage(it)
+//    }
+//    Chamar imagem
+//    view.findViewById<ImageView>(R.id.receitaImage).setOnClickListener {
+//        getImage.launch(100)
+//    }
+//    Criar função para receber imagem
+//    private fun setImage(it: Uri?) {
+//        fotoReceita = it
+//        view?.findViewById<ImageView>(R.id.receitaImage)?.setImageURI(it)
+//    }
+//    Receber dados no campo de cadastro (Detalhes.kt)
+//
+//    val fotoReceita = view.findViewById<ImageView>(R.id.receitaImage)
+//    args.receita.foto?.let { foto ->
+//        fotoReceita.setImageURI(foto)
+//    }
+//    Açao de atualizar a receita:
+//    foto = args.receita.foto
 
 
     fun backToMenu(){

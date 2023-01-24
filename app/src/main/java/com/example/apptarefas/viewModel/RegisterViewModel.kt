@@ -1,6 +1,7 @@
 package com.example.apptarefas.viewModel
 
 import android.app.Activity
+import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -18,6 +19,7 @@ class RegisterViewModel(val fragment: RegisterFragment): ViewModel() {
         title: String,
         description: String,
         utensils: String,
+        image: Uri?,
         context: Activity
     ) {
         userDataSource.saveUser(
@@ -25,7 +27,8 @@ class RegisterViewModel(val fragment: RegisterFragment): ViewModel() {
             task = Task(
                 title = title,
                 description = description,
-                utensils = utensils
+                utensils = utensils,
+                imagem = image
             )
         )
         userSaved.value = Unit

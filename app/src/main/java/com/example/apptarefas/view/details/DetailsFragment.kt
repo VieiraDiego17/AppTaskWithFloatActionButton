@@ -67,11 +67,17 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             findNavController().navigate(R.id.actionDetailsToList)
         }
 
+        val imageCar = imageCarDetail
+        args.task.imagem?.let { image ->
+            imageCar.setImageURI(image)
+        }
+
         buttonSaveEdit.setOnClickListener {
             Banco.alterTask(args.task, Task(
                 title = titleDetails.text.toString(),
                 description = descriptionDetails.text.toString(),
-                utensils = utensilsDetails.text.toString()
+                utensils = utensilsDetails.text.toString(),
+                imagem = args.task.imagem
             ))
             findNavController().navigate(R.id.actionDetailsToList)
         }

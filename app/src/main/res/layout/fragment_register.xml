@@ -26,14 +26,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="350sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:background="@drawable/inputs"
             android:text="CADASTRO DE MANUTENÇÃO"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -44,7 +44,7 @@
 
         <EditText
             android:id="@+id/textTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="350sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/inputs"
@@ -59,7 +59,7 @@
 
         <EditText
             android:id="@+id/textDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="350sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/inputs"
@@ -76,7 +76,7 @@
 
         <EditText
             android:id="@+id/textUtelsils"
-            android:layout_width="wrap_content"
+            android:layout_width="350sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/inputs"
@@ -96,12 +96,13 @@
             style="@style/botao_azul"
             android:layout_width="169dp"
             android:layout_height="58dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/cantos"
             android:text="CADASTRAR MANUTENÇÃO"
-            app:layout_constraintEnd_toEndOf="@+id/textUtelsils"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintStart_toStartOf="@+id/textUtelsils"
+            app:layout_constraintEnd_toStartOf="@+id/buttonRegisterToMenu"
+            app:layout_constraintHorizontal_bias="0.173"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textUtelsils" />
 
         <Button
@@ -109,33 +110,35 @@
             style="@style/botao_azul"
             android:layout_width="169dp"
             android:layout_height="58dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
             android:background="@drawable/cantos"
             android:text="IR PRA TELA HOME"
-            app:layout_constraintEnd_toEndOf="@+id/buttonRegisterToList"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/buttonRegisterToList"
-            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterToList" />
+            app:layout_constraintBottom_toBottomOf="@+id/buttonRegisterToList"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/buttonRegisterToList" />
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="100sp"
-            android:layout_height="100sp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintEnd_toEndOf="@+id/buttonRegisterToMenu"
-            app:layout_constraintHorizontal_bias="0.593"
-            app:layout_constraintStart_toStartOf="@+id/buttonRegisterToMenu"
-            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterToMenu"/>
+            android:id="@+id/imageGalery"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSelectImage" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonSelectImage"
+            style="@style/botao_azul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Button"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            android:background="@drawable/cantos"
+            android:text="CARREGAR IMAGEM"
+            app:layout_constraintEnd_toEndOf="@+id/buttonRegisterToMenu"
+            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintStart_toStartOf="@+id/buttonRegisterToList"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterToMenu" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

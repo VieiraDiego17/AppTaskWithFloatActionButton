@@ -99,27 +99,28 @@
         style="@style/botao_azul"
         android:layout_width="170sp"
         android:layout_height="40sp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/cantos"
         android:text="FAZER LOGIN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonLoginToRegister"
+        app:layout_constraintEnd_toStartOf="@+id/buttonLoginToRegister"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPasswordLogin"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/buttonLoginToRegister"
+        style="@style/botao_azul"
         android:layout_width="170sp"
         android:layout_height="40sp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="25dp"
         android:background="@drawable/cantos"
-        style="@style/botao_azul"
         android:text="FAZER CADASTRO"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLoginToHome" />
+        app:layout_constraintTop_toBottomOf="@+id/textPasswordLogin" />
 
     <ImageView
         android:id="@+id/imageView2"
