@@ -30,7 +30,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="56dp"
             android:background="@drawable/inputs"
             android:text="DETALHES DE MANUTENÇÃO"
             android:textColor="@color/black"
@@ -40,50 +40,89 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Titulo da manutenção"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/title"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
         <EditText
             android:id="@+id/titleDetails"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/inputs"
             android:textAlignment="center"
-            android:textSize="20sp"
             android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/imageEdit1"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Descrição da manutenção"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/titleDetails"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toStartOf="@+id/titleDetails"
+            app:layout_constraintTop_toBottomOf="@+id/titleDetails" />
 
         <EditText
             android:id="@+id/descriptionDetails"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/inputs"
             android:textAlignment="center"
-            android:textSize="20sp"
             android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/imageEdit2"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/titleDetails"
-            app:layout_constraintTop_toBottomOf="@+id/titleDetails" />
+            app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+
+        <TextView
+            android:id="@+id/textUtensils"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Material da manutenção"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/descriptionDetails"
+            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintStart_toStartOf="@+id/descriptionDetails"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionDetails" />
 
         <EditText
             android:id="@+id/utensilsDetails"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/inputs"
             android:textAlignment="center"
-            android:textSize="20sp"
             android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/imageEdit3"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/descriptionDetails"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionDetails" />
+            app:layout_constraintTop_toBottomOf="@+id/textUtensils" />
 
         <Button
             android:id="@+id/buttonSaveEdit"
@@ -138,30 +177,30 @@
             android:id="@+id/imageEdit1"
             android:layout_width="57dp"
             android:layout_height="53dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle"
             app:srcCompat="@drawable/edit" />
 
         <ImageView
             android:id="@+id/imageEdit2"
             android:layout_width="57dp"
             android:layout_height="53dp"
-            android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleDetails"
+            app:layout_constraintTop_toBottomOf="@+id/textDescription"
             app:srcCompat="@drawable/edit" />
 
         <ImageView
             android:id="@+id/imageEdit3"
             android:layout_width="57dp"
             android:layout_height="53dp"
-            android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionDetails"
+            app:layout_constraintTop_toBottomOf="@+id/textUtensils"
             app:srcCompat="@drawable/edit" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

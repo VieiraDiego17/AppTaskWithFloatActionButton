@@ -1,8 +1,14 @@
 package com.example.apptarefas.view.register
 
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -10,10 +16,16 @@ import com.example.apptarefas.R
 import com.example.apptarefas.model.Task
 import com.example.apptarefas.viewModel.RegisterViewModel
 import kotlinx.android.synthetic.main.fragment_register.*
+import java.util.jar.Manifest
 
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
     private lateinit var viewModel: RegisterViewModel
+    private lateinit var dialog: AlertDialog
+
+    companion object{
+        private val PERMISSAO_GALERIA = android.Manifest.permission.READ_EXTERNAL_STORAGE
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,6 +80,9 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             }
         }
     }
+
+
+
     fun backToMenu(){
         buttonRegisterToMenu.setOnClickListener {
             findNavController().navigate(R.id.actionRegisterToMenu)

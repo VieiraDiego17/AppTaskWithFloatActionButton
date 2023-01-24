@@ -2,7 +2,6 @@ package com.example.apptarefas.banco
 
 import com.example.apptarefas.model.BancoObject
 import com.example.apptarefas.model.Task
-import com.example.apptarefas.viewModel.ListViewModel
 
 object Banco {
     private var bancoObject = BancoObject()

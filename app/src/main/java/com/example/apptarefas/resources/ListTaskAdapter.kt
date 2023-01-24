@@ -9,7 +9,6 @@ import com.example.apptarefas.R
 import com.example.apptarefas.model.Task
 import com.example.apptarefas.viewModel.ListViewModel
 import kotlinx.android.synthetic.main.container.view.*
-import java.util.*
 
 class ListTaskAdapter(private var onClick: (Task) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -39,27 +38,17 @@ class ListTaskAdapter(private var onClick: (Task) -> Unit) : RecyclerView.Adapte
         notifyDataSetChanged()
     }
 
-    fun removeAt(position: Int) {
-        list.removeAt(position)
-        notifyItemRemoved(position)
-    }
-
     class ListTaskViewHolder constructor(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
-        var titleTask: TextView = itemView.textTypeTask
-        var descriptionTask: TextView = itemView.textTypeDate
-        //var utensilsTask: TextView = itemView.textTypeUtensils
-        // LINHA COMENTADA POIS O ITEM NÃO DEVE APARECER NO CARD,
-        // SOMENTE NA TELA DE DETAILS
+        var titleTask: TextView = itemView.textTypeTitle
+        var descriptionTask: TextView = itemView.textTypeTask
+        var utensilsTask: TextView = itemView.textTypeUtensils
 
         fun bind(task: Task,onClick: (Task) -> Unit){
             titleTask.text = task.title
             descriptionTask.text = task.description
-            //utensilsTask.text = task.utensils
-            // LINHA COMENTADA POIS O ITEM NÃO DEVE APARECER NO CARD,
-            // SOMENTE NA TELA DE DETAILS
-
+            utensilsTask.text = task.utensils
 
             //AQUI O CLICK FUNCIONA SOMENTE NA IMAGEM DA FERRAMENTA NO CARD
 //            itemView.imageFerramenta.setOnClickListener {
@@ -72,7 +61,6 @@ class ListTaskAdapter(private var onClick: (Task) -> Unit) : RecyclerView.Adapte
             itemView.setOnClickListener {
                 onClick(task)
             }
-
         }
     }
 }

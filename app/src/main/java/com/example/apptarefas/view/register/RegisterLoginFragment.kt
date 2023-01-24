@@ -52,4 +52,7 @@ class RegisterLoginFragment : Fragment(R.layout.fragment_register_login) {
             createLogin()
         }
     }
+
+
+
 }

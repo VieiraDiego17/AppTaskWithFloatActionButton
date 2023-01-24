@@ -31,14 +31,14 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/inputs"
             android:text="CADASTRO DE MANUTENÇÃO"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +46,7 @@
             android:id="@+id/textTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/inputs"
             android:hint="Digite o tiulo da manutenção"
             android:textAlignment="center"
@@ -61,7 +61,7 @@
             android:id="@+id/textDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/inputs"
             android:ems="10"
             android:hint="Digite a descrição da manutenção"
@@ -78,7 +78,7 @@
             android:id="@+id/textUtelsils"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/inputs"
             android:ems="10"
             android:hint="Digite o que vai usar para realizar a manutenção"
@@ -96,7 +96,7 @@
             style="@style/botao_azul"
             android:layout_width="169dp"
             android:layout_height="58dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/cantos"
             android:text="CADASTRAR MANUTENÇÃO"
             app:layout_constraintEnd_toEndOf="@+id/textUtelsils"
@@ -109,12 +109,33 @@
             style="@style/botao_azul"
             android:layout_width="169dp"
             android:layout_height="58dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/cantos"
             android:text="IR PRA TELA HOME"
             app:layout_constraintEnd_toEndOf="@+id/buttonRegisterToList"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/buttonRegisterToList"
             app:layout_constraintTop_toBottomOf="@+id/buttonRegisterToList" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="@+id/buttonRegisterToMenu"
+            app:layout_constraintHorizontal_bias="0.593"
+            app:layout_constraintStart_toStartOf="@+id/buttonRegisterToMenu"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterToMenu"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Button"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
