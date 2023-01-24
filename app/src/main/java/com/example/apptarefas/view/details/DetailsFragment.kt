@@ -1,5 +1,9 @@
 package com.example.apptarefas.view.details
 
+
+import android.app.AlertDialog
+import android.app.Dialog
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -8,18 +12,24 @@ import androidx.navigation.fragment.navArgs
 import com.example.apptarefas.R
 import com.example.apptarefas.banco.Banco
 import com.example.apptarefas.model.Task
-import com.example.apptarefas.resources.ListTaskAdapter
+import com.example.apptarefas.resources.ImageContract
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_details.*
+import kotlinx.android.synthetic.main.fragment_details.view.*
+import kotlinx.android.synthetic.main.fragment_register.*
+
 
 class DetailsFragment : Fragment(R.layout.fragment_details) {
 
     private val args: DetailsFragmentArgs by navArgs()
-    private lateinit var listAdapter: ListTaskAdapter
+    private var image: Uri? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    private val getImage = registerForActivityResult(
+        ImageContract()
+    ){
+        setImage(it)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,6 +37,8 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         receivedList()
         setClicked()
         clickEditOff()
+        callImage()
+        sendImage()
 
         titleDetails.isEnabled = false
         descriptionDetails.isEnabled = false
@@ -37,6 +49,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         titleDetails.setText(args.task.title)
         descriptionDetails.setText(args.task.description)
         utensilsDetails.setText(args.task.utensils)
+        imageCarDetail
     }
 
     fun clickEditOff(){
@@ -50,6 +63,16 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
         imageEdit3.setOnClickListener {
             utensilsDetails.isEnabled = true
+        }
+    }
+
+    fun sendImage(){
+        val json = Gson().toJson(args.task.imagem)
+        imageCarDetail.setOnClickListener {
+            var action = DetailsFragmentDirections.actionDetailsToImage(
+                json
+            )
+            findNavController().navigate(action)
         }
     }
 
@@ -67,7 +90,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             findNavController().navigate(R.id.actionDetailsToList)
         }
 
-        val imageCar = imageCarDetail
+        var imageCar = imageCarDetail
         args.task.imagem?.let { image ->
             imageCar.setImageURI(image)
         }
@@ -83,4 +106,15 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         }
     }
 
+
+    private fun callImage(){
+        imagemEditImage.setOnClickListener {
+            getImage.launch(100)
+        }
+    }
+
+    private fun setImage(it: Uri?) {
+        image = it
+        imageGalery.setImageURI(it)
+    }
 }

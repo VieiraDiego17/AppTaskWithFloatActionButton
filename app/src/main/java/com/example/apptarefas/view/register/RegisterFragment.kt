@@ -94,33 +94,6 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
         imageGalery.setImageURI(it)
     }
 
-
-//    Criar variáveis da imagem
-//    private var fotoReceita: Uri? = null
-//    private val getImage = registerForActivityResult(
-//        EscolherFotoGaleriaContract()
-//    ){
-//        setImage(it)
-//    }
-//    Chamar imagem
-//    view.findViewById<ImageView>(R.id.receitaImage).setOnClickListener {
-//        getImage.launch(100)
-//    }
-//    Criar função para receber imagem
-//    private fun setImage(it: Uri?) {
-//        fotoReceita = it
-//        view?.findViewById<ImageView>(R.id.receitaImage)?.setImageURI(it)
-//    }
-//    Receber dados no campo de cadastro (Detalhes.kt)
-//
-//    val fotoReceita = view.findViewById<ImageView>(R.id.receitaImage)
-//    args.receita.foto?.let { foto ->
-//        fotoReceita.setImageURI(foto)
-//    }
-//    Açao de atualizar a receita:
-//    foto = args.receita.foto
-
-
     fun backToMenu(){
         buttonRegisterToMenu.setOnClickListener {
             findNavController().navigate(R.id.actionRegisterToMenu)

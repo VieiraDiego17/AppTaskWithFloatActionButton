@@ -29,7 +29,24 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_detailsFragment_to_imageFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="imageFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="412" />
+                            <option name="y" value="13" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -113,18 +130,6 @@
                               </value>
                             </entry>
                           </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="progressInitialFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-946" />
-                            <option name="y" value="-8" />
-                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

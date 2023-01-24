@@ -68,6 +68,9 @@
         <action
             android:id="@+id/actionDetailsToMenu"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/actionDetailsToImage"
+            app:destination="@id/imageFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -94,5 +97,14 @@
         <action
             android:id="@+id/actionRegisterLoginToLogin"
             app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.apptarefas.view.image.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <argument
+            android:name="imageReceived"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -24,11 +24,4 @@
     <style name="progress">
         <item name="color">#4E4B4B</item>
     </style>
-
-
-
-    <!--    <style name="moldura">-->
-    <!--        <item name="android:background">@drawable/moldura</item>-->
-    <!--    </style>-->
-
 </resources>
