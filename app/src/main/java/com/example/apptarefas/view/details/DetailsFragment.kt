@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.apptarefas.R
 import com.example.apptarefas.banco.Banco
+import com.example.apptarefas.model.Image
 import com.example.apptarefas.model.Task
 import com.example.apptarefas.resources.ImageContract
 import com.google.gson.Gson
@@ -67,10 +68,11 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
     }
 
     fun sendImage(){
-        val json = Gson().toJson(args.task.imagem)
+        val image = Image(args.task.imagem!!)
+
         imageCarDetail.setOnClickListener {
             var action = DetailsFragmentDirections.actionDetailsToImage(
-                json
+                image
             )
             findNavController().navigate(action)
         }

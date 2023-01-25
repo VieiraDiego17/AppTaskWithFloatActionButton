@@ -105,6 +105,6 @@
         tools:layout="@layout/fragment_image" >
         <argument
             android:name="imageReceived"
-            app:argType="string" />
+            app:argType="com.example.apptarefas.model.Image" />
     </fragment>
 </navigation>

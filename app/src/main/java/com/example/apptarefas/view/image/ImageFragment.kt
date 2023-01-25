@@ -8,13 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.example.apptarefas.R
+import com.example.apptarefas.model.Image
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_image.*
+import java.net.URI
 
 class ImageFragment : Fragment(R.layout.fragment_image) {
 
     val args: ImageFragmentArgs by navArgs()
-    lateinit var jsonConverted: Uri
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -22,7 +24,7 @@ class ImageFragment : Fragment(R.layout.fragment_image) {
     }
 
     fun imageReceived() {
-         jsonConverted = Gson().fromJson(args.imageReceived, Uri::class.java)
-        imageCarReceived.setImageURI(jsonConverted)
+        val jsonConverted = args.imageReceived
+        imageCarReceived.setImageURI(jsonConverted.image)
     }
 }

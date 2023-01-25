@@ -19,5 +19,6 @@ object Banco {
         saveUser(taskAtualizada)
     }
 
+
     fun getUsers() = bancoObject.list
 }
