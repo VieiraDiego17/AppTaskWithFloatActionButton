@@ -21,6 +21,9 @@
             app:argType="com.example.apptarefas.model.Task"
             app:nullable="true"
             android:defaultValue="@null" />
+        <argument
+            android:name="imagePerfil"
+            app:argType="com.example.apptarefas.model.Image" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -88,6 +91,11 @@
             app:argType="com.example.apptarefas.model.Login"
             app:nullable="true"
             android:defaultValue="@null" />
+        <argument
+            android:name="imageUser"
+            app:argType="com.example.apptarefas.model.Image"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/registerLoginFragment"
@@ -97,6 +105,9 @@
         <action
             android:id="@+id/actionRegisterLoginToLogin"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/actionRegisterLoginToMenu"
+            app:destination="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/imageFragment"
@@ -106,5 +117,8 @@
         <argument
             android:name="imageReceived"
             app:argType="com.example.apptarefas.model.Image" />
+        <action
+            android:id="@+id/actionImageToDetails"
+            app:destination="@id/detailsFragment" />
     </fragment>
 </navigation>

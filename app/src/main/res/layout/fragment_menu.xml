@@ -23,28 +23,42 @@
         style="@style/botao_azul"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/cantos"
         android:text="CADASTRAR MANUTENÇÃO"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewPerfil"
         app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/imageViewPerfil"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/moldura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="O que deseja fazer?"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewPerfil"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageViewPerfil"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPerfil" />
 
     <Button
         android:id="@+id/buttonMenuToList"
+        style="@style/botao_azul"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/cantos"
-        style="@style/botao_azul"
         android:text="VER MANUTENÇÕES CADASTRADAS"
         app:layout_constraintEnd_toEndOf="@+id/buttonMenuToRegister"
         app:layout_constraintStart_toStartOf="@+id/buttonMenuToRegister"
         app:layout_constraintTop_toBottomOf="@+id/buttonMenuToRegister" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewPerfil"
         android:layout_width="277dp"
         android:layout_height="262dp"
         android:layout_marginTop="52dp"
@@ -52,4 +66,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/viewFundo" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,6 @@ package com.example.apptarefas.view.register
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -13,13 +12,14 @@ import com.example.apptarefas.model.Task
 import com.example.apptarefas.resources.ImageContract
 import com.example.apptarefas.viewModel.RegisterViewModel
 import kotlinx.android.synthetic.main.fragment_register.*
-import kotlinx.android.synthetic.main.fragment_register.view.*
+import kotlinx.android.synthetic.main.fragment_register.textDescription
+import kotlinx.android.synthetic.main.fragment_register.textTitle
 
 
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
     private lateinit var viewModel: RegisterViewModel
-    private var imageCar: Uri? = null
+    private var imagemCar: Uri? = null
 
     private val getImage = registerForActivityResult(
         ImageContract()
@@ -64,34 +64,33 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                     title = textTitle.text.toString(),
                     description = textDescription.text.toString(),
                     utensils = textUtelsils.text.toString(),
-                    imageCar,
+                    image = imagemCar,
                     context = requireActivity()
                 )
 
-                viewModel.userSaved.observe(viewLifecycleOwner) {
                     val action = RegisterFragmentDirections.actionRegisterToList(
                         Task(
                             textTitle.text.toString(),
                             textDescription.text.toString(),
                             textUtelsils.text.toString(),
-                            imageCar
+                            imagemCar
                         )
                     )
                     findNavController().navigate(action)
-                }
+
             }
         }
     }
 
     private fun callImage(){
-        buttonSelectImage.setOnClickListener {
+        imageCar1?.setOnClickListener {
             getImage.launch(100)
         }
     }
 
     private fun setImage(it: Uri?) {
-        imageCar = it
-        imageGalery.setImageURI(it)
+        imagemCar = it
+        imageCar1.setImageURI(it)
     }
 
     fun backToMenu(){

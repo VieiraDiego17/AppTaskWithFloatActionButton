@@ -4,18 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/botao"
     tools:context=".view.image.ImageFragment">
+
+    <ImageView
+        android:id="@+id/imageFundo"
+        android:layout_width="0dp"
+        android:layout_height="800sp"
+        android:background="#90000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"  />
 
 
     <ImageView
         android:id="@+id/imageCarReceived"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350sp"
+        android:layout_height="600sp"
         android:layout_marginStart="53dp"
         android:layout_marginEnd="53dp"
-        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageDelete"
+        android:layout_width="95dp"
+        android:layout_height="92dp"
+        android:src="@drawable/delete"
+        app:layout_constraintEnd_toEndOf="@+id/imageCarReceived"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageCarReceived"
+        app:layout_constraintTop_toTopOf="@+id/imageCarReceived" />
 </androidx.constraintlayout.widget.ConstraintLayout>

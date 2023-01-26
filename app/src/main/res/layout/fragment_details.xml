@@ -40,17 +40,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageCarDetail"
+        <LinearLayout
+            android:id="@+id/linearImage"
+            style="@style/image_circle"
             android:layout_width="150sp"
             android:layout_height="150sp"
-            android:layout_marginTop="20dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/logo"
+            android:layout_marginTop="20sp"
             app:layout_constraintEnd_toEndOf="@+id/title"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="@+id/title"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/title">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageCarImg"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:src="@drawable/logo" />
+
+        </LinearLayout>
+
+
 
 
         <ImageView
@@ -71,9 +80,9 @@
             android:text="Titulo da manutenção"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageCarDetail"
-            app:layout_constraintStart_toStartOf="@+id/imageCarDetail"
-            app:layout_constraintTop_toBottomOf="@+id/imageCarDetail" />
+            app:layout_constraintEnd_toEndOf="@+id/linearImage"
+            app:layout_constraintStart_toStartOf="@+id/linearImage"
+            app:layout_constraintTop_toBottomOf="@+id/linearImage" />
 
         <EditText
             android:id="@+id/titleDetails"

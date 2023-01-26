@@ -27,19 +27,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/inputs"
             android:text="CADASTRO DE DADOS PARA LOGIN"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,14 +46,13 @@
             android:id="@+id/textEmailLogin"
             android:layout_width="350sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/inputs"
             android:text="teste"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/title"
-            app:layout_constraintHorizontal_bias="0.484"
             app:layout_constraintStart_toStartOf="@+id/title"
             app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -62,13 +60,14 @@
             android:id="@+id/textPasswordLogin"
             android:layout_width="350sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/inputs"
             android:text="teste"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/textEmailLogin"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/textEmailLogin"
             app:layout_constraintTop_toBottomOf="@+id/textEmailLogin" />
 
@@ -76,28 +75,48 @@
             android:id="@+id/textPasswordLogin2"
             android:layout_width="350sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/inputs"
             android:text="teste"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/textPasswordLogin"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/textPasswordLogin"
             app:layout_constraintTop_toBottomOf="@+id/textPasswordLogin" />
+
 
         <Button
             android:id="@+id/buttonRegisterToLogin"
             style="@style/botao_azul"
             android:layout_width="350sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/cantos"
             android:text="CADASTRAR LOGIN"
             app:layout_constraintEnd_toEndOf="@+id/textPasswordLogin2"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/textPasswordLogin2"
             app:layout_constraintTop_toBottomOf="@+id/textPasswordLogin2" />
+
+
+        <LinearLayout
+            style="@style/image_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterToLogin">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageGaleryPerfil"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/add" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

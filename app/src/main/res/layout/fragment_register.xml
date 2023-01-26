@@ -117,28 +117,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/buttonRegisterToList" />
 
-        <ImageView
-            android:id="@+id/imageGalery"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSelectImage" />
-
-        <Button
-            android:id="@+id/buttonSelectImage"
-            style="@style/botao_azul"
+        <LinearLayout
+            style="@style/image_circle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/cantos"
-            android:text="CARREGAR IMAGEM"
-            app:layout_constraintEnd_toEndOf="@+id/buttonRegisterToMenu"
-            app:layout_constraintHorizontal_bias="0.485"
-            app:layout_constraintStart_toStartOf="@+id/buttonRegisterToList"
-            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterToMenu" />
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegisterToMenu">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageCar1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/add" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

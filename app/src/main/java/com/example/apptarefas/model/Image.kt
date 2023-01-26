@@ -4,5 +4,5 @@ import android.net.Uri
 import java.io.Serializable
 
 data class Image(
-    var image: Uri
+    var image: Uri?
 ) : Serializable
