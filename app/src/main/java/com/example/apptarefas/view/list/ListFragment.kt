@@ -52,7 +52,6 @@ class ListFragment : Fragment(R.layout.fragment_list) {
             findNavController().navigate(action)
         }
 
-
         args.task?.let {
             DataSourceList.castToList(it)
         }?.let {

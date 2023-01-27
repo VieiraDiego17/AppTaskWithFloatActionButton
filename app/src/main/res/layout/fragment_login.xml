@@ -23,17 +23,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"  />
 
+    <LinearLayout
+        android:id="@+id/linearImage"
+        style="@style/image_circle"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100sp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imagePerfilLogin"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:src="@drawable/logo" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="30dp"
         android:text="MANUTENÇÕES"
         android:textColor="@color/white"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/imagePerfilLogin"
-        app:layout_constraintStart_toStartOf="@+id/imagePerfilLogin"
-        app:layout_constraintTop_toBottomOf="@+id/imagePerfilLogin" />
+        app:layout_constraintEnd_toEndOf="@+id/linearImage"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="@+id/linearImage"
+        app:layout_constraintTop_toBottomOf="@+id/linearImage" />
 
     <TextView
         android:id="@+id/textView3"
@@ -55,7 +73,7 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/inputs"
         android:ems="10"
-        android:text="teste"
+        android:hint="Digite o seu e-mail"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColorHint="@color/black"
@@ -84,7 +102,7 @@
         android:layout_height="40sp"
         android:layout_marginTop="8dp"
         android:background="@drawable/inputs"
-        android:text="teste"
+        android:hint="Digite a sua senha"
         android:inputType="textPassword"
         android:textAlignment="center"
         android:textColorHint="@color/black"
@@ -122,15 +140,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPasswordLogin" />
 
-    <ImageView
-        android:id="@+id/imagePerfilLogin"
-        android:layout_width="293dp"
-        android:layout_height="257dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

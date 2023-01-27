@@ -91,11 +91,6 @@
             app:argType="com.example.apptarefas.model.Login"
             app:nullable="true"
             android:defaultValue="@null" />
-        <argument
-            android:name="imageUser"
-            app:argType="com.example.apptarefas.model.Image"
-            app:nullable="true"
-            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/registerLoginFragment"

@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_register_login.*
 
 class RegisterLoginFragment : Fragment(R.layout.fragment_register_login) {
 
-    private var image: Uri? = null
+    private var imagePerfil: Uri? = null
 
     private val getImage = registerForActivityResult(
         ImageContract()
@@ -51,17 +51,15 @@ class RegisterLoginFragment : Fragment(R.layout.fragment_register_login) {
         } else {
             var login = Login(
                 textEmailLogin.text.toString(),
-                textPasswordLogin.text.toString()
+                textPasswordLogin.text.toString(),
+                imagePerfil
             )
 
             //TODO = BUSCAR IMAGEM NA GALERIA E ENVIAR PARA TELA DE LOGIN
             //var img = Image(image)
 
             val action = RegisterLoginFragmentDirections.actionRegisterLoginToLogin(
-                login,
-
-                //TODO = AQUI
-                //img
+                login
             )
             findNavController().navigate(action)
         }
@@ -80,7 +78,7 @@ class RegisterLoginFragment : Fragment(R.layout.fragment_register_login) {
     }
 
     private fun setImage(it: Uri?) {
-        image = it
+        imagePerfil = it
         imageGaleryPerfil.setImageURI(it)
     }
 }

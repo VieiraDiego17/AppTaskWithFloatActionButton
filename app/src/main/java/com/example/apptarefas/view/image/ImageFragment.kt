@@ -26,7 +26,7 @@ class ImageFragment : Fragment(R.layout.fragment_image) {
 
     fun buttonClicked(){
         imageDelete.setOnClickListener {
-            findNavController().navigate(R.id.actionImageToDetails)
+            findNavController().navigateUp()
         }
     }
 }

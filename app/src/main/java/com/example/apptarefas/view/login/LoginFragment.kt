@@ -22,8 +22,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private val args: LoginFragmentArgs by navArgs()
     private lateinit var viewModel: LoginViewModel
-    private var imagemCar: Uri? = null
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,28 +29,35 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         viewModel = ViewModelProvider(
             this,
             LoginViewModel.LoginViewModelProvider(
-                this))[LoginViewModel::class.java]
+                this
+            )
+        )[LoginViewModel::class.java]
 
+        if (args.login != null) {
+            imagePerfilLogin.setImageURI(args.login?.imagem)
+        }
         setButtonClicked()
     }
 
-    fun callValidateLogin(login: Login){
-        viewModel.validateLogin(login){
-            if (it){
+    fun callValidateLogin(login: Login) {
+        viewModel.validateLogin(login) {
+            if (it) {
                 findNavController().navigate(R.id.actionLoginToHome)
-            }else{
+            } else {
                 Toast.makeText(
                     requireContext(),
                     "Login inválido! Verifique seus dados e tente novamente.",
-                    Toast.LENGTH_LONG).show()
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
+
     }
 
     private fun setButtonClicked() {
         buttonLoginToHome.setOnClickListener {
-            args.login?.let { it -> callValidateLogin(it) }
-
+            args.login?.let { it -> callValidateLogin(it)
+            }
             //TODO = ENVIAR IMAGEM PARA TELA MENU
             //args.imageUser.let { it }
         }
