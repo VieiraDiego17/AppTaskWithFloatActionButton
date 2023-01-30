@@ -30,7 +30,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/inputs"
             android:text="DETALHES DE MANUTENÇÃO"
             android:textColor="@color/black"
@@ -156,60 +156,6 @@
             app:layout_constraintStart_toStartOf="@+id/descriptionDetails"
             app:layout_constraintTop_toBottomOf="@+id/textUtensils" />
 
-        <Button
-            android:id="@+id/buttonSaveEdit"
-            style="@style/botao_azul"
-            android:layout_width="169dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/cantos"
-            android:text="SALVAR ALTERAÇÃO"
-            app:layout_constraintBottom_toBottomOf="@+id/buttonDelete"
-            app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
-            app:layout_constraintHorizontal_bias="0.086"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/utensilsDetails" />
-
-        <Button
-            android:id="@+id/buttonDelete"
-            style="@style/botao_azul"
-            android:layout_width="169dp"
-            android:layout_height="58dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="25dp"
-            android:background="@drawable/cantos"
-            android:text="DELETAR TASK"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/utensilsDetails" />
-
-        <Button
-            android:id="@+id/buttonDetailsToList"
-            style="@style/botao_azul"
-            android:layout_width="169dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/cantos"
-            android:text="IR PARA LISTA"
-            app:layout_constraintBottom_toBottomOf="@+id/buttonDetailsToMenu"
-            app:layout_constraintEnd_toStartOf="@+id/buttonDetailsToMenu"
-            app:layout_constraintHorizontal_bias="0.12"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonDelete" />
-
-        <Button
-            android:id="@+id/buttonDetailsToMenu"
-            style="@style/botao_azul"
-            android:layout_width="169dp"
-            android:layout_height="58dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="24dp"
-            android:background="@drawable/cantos"
-            android:text="IR PARA INICIO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonDelete" />
-
         <ImageView
             android:id="@+id/imageEdit1"
             android:layout_width="57dp"
@@ -237,6 +183,82 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textUtensils"
             app:srcCompat="@drawable/edit" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/utensilsDetails">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/saveFloatButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/ic_save"
+                android:visibility="gone"
+                app:backgroundTint="@color/azul"
+                app:tint="@color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/deleteFloatButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"
+                app:backgroundTint="@color/azul"
+                app:tint="@color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/detaislToList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/ic_list"
+                android:visibility="gone"
+                app:backgroundTint="@color/azul"
+                app:tint="@color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/detailsToMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/purple_500"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/ic_home"
+                android:visibility="gone"
+                app:backgroundTint="@color/azul"
+                app:tint="@color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/openFloatButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/purple_500"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/ic_add"
+                app:backgroundTint="@color/azul"
+                app:tint="@color/white" />
+        </LinearLayout>
 
 
 

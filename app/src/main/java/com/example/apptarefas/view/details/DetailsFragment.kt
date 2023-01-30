@@ -11,6 +11,8 @@ import com.example.apptarefas.banco.Banco
 import com.example.apptarefas.model.Image
 import com.example.apptarefas.model.Task
 import kotlinx.android.synthetic.main.fragment_details.*
+import kotlinx.android.synthetic.main.fragment_details.openFloatButton
+import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.android.synthetic.main.fragment_register.*
 
 
@@ -18,11 +20,14 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
     private val args: DetailsFragmentArgs by navArgs()
 
+    private var floatActionButtonVisible = false
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        floatButtonCLicked()
+        actionOnFlotButton()
         receivedList()
-        setClicked()
         clickEditOff()
         sendImage()
 
@@ -50,34 +55,71 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         imageEdit3.setOnClickListener {
             utensilsDetails.isEnabled = true
         }
-    }
-
-    fun setClicked(){
-        buttonDetailsToList.setOnClickListener {
-            findNavController().navigate(R.id.actionDetailsToList)
-        }
-
-        buttonDetailsToMenu.setOnClickListener {
-            findNavController().navigate(R.id.actionDetailsToMenu)
-        }
-
-        buttonDelete.setOnClickListener {
-            Banco.deleteTask(args.task)
-            findNavController().navigate(R.id.actionDetailsToList)
-        }
 
         var imageCar = imageCarImg
         args.task.imagem?.let { image ->
             imageCar.setImageURI(image)
         }
+    }
 
-        buttonSaveEdit.setOnClickListener {
+    fun floatButtonCLicked(){
+            floatActionButtonVisible = false
+
+            openFloatButton.setOnClickListener {
+                if (!floatActionButtonVisible) {
+                    saveFloatButton.show()
+                    deleteFloatButton.show()
+                    detaislToList.show()
+                    detailsToMenu.show()
+
+                    saveFloatButton.visibility = View.VISIBLE
+                    deleteFloatButton.visibility = View.VISIBLE
+                    detaislToList.visibility = View.VISIBLE
+                    detailsToMenu.visibility = View.VISIBLE
+
+                    openFloatButton.setImageResource(R.drawable.ic_close)
+
+                    floatActionButtonVisible = true
+                } else {
+                    saveFloatButton.hide()
+                    deleteFloatButton.hide()
+                    detailsToMenu.hide()
+                    detaislToList.hide()
+
+                    saveFloatButton.visibility = View.GONE
+                    deleteFloatButton.visibility = View.GONE
+                    detaislToList.visibility = View.GONE
+                    detailsToMenu.visibility = View.GONE
+
+                    openFloatButton.setImageResource(R.drawable.ic_add)
+
+                    floatActionButtonVisible = false
+            }
+        }
+    }
+
+    fun actionOnFlotButton(){
+
+        deleteFloatButton.setOnClickListener {
+            Banco.deleteTask(args.task)
+            findNavController().navigate(R.id.actionDetailsToList)
+        }
+
+        saveFloatButton.setOnClickListener {
             Banco.alterTask(args.task, Task(
                 title = titleDetails.text.toString(),
                 description = descriptionDetails.text.toString(),
                 utensils = utensilsDetails.text.toString(),
                 imagem = args.task.imagem
             ))
+            findNavController().navigate(R.id.actionDetailsToList)
+        }
+
+        detailsToMenu.setOnClickListener {
+            findNavController().navigate(R.id.actionDetailsToMenu)
+        }
+
+        detaislToList.setOnClickListener {
             findNavController().navigate(R.id.actionDetailsToList)
         }
     }

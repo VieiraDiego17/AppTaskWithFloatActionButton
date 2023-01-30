@@ -8,17 +8,22 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.apptarefas.R
+import com.example.apptarefas.banco.Banco
 import com.example.apptarefas.model.Task
 import com.example.apptarefas.resources.DataSourceList
 import com.example.apptarefas.resources.ListTaskAdapter
 import com.example.apptarefas.viewModel.ListViewModel
+import kotlinx.android.synthetic.main.container.*
+import kotlinx.android.synthetic.main.fragment_details.*
 import kotlinx.android.synthetic.main.fragment_list.*
+import kotlinx.android.synthetic.main.fragment_list.view.*
 
 class ListFragment : Fragment(R.layout.fragment_list) {
 
     private val args: ListFragmentArgs by navArgs()
     private lateinit var listAdapter: ListTaskAdapter
     private lateinit var viewModel: ListViewModel
+    private var floatActionButtonVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +40,11 @@ class ListFragment : Fragment(R.layout.fragment_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         setClicked()
         setRecyclerView()
+        floatActionButton()
     }
 
     fun setRecyclerView() {
@@ -65,12 +73,42 @@ class ListFragment : Fragment(R.layout.fragment_list) {
     }
 
     fun setClicked() {
-        buttonListToRegister.setOnClickListener {
+        addFloatButtonRegister.setOnClickListener {
             findNavController().navigate(R.id.actionListToRegister)
         }
 
-        buttonListToMenu.setOnClickListener {
+        goToHome.setOnClickListener {
             findNavController().navigate(R.id.actionListToMenu)
         }
+
+    }
+
+    fun floatActionButton() {
+        floatActionButtonVisible = false
+
+        addFloat.openFloatButton.setOnClickListener {
+            if (!floatActionButtonVisible) {
+                addFloatButtonRegister.show()
+                goToHome.show()
+
+                addFloatButtonRegister.visibility = View.VISIBLE
+                goToHome.visibility = View.VISIBLE
+
+                addFloat.openFloatButton.setImageResource(R.drawable.ic_close)
+
+
+                floatActionButtonVisible = true
+            } else {
+                addFloatButtonRegister.hide()
+                goToHome.hide()
+
+                addFloatButtonRegister.visibility = View.GONE
+                goToHome.visibility = View.GONE
+
+                addFloat.openFloatButton.setImageResource(R.drawable.ic_add)
+
+                floatActionButtonVisible = false
+            }
         }
     }
+}
